@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First React Project</title>
+        <!-- React, React-DOM, and the Babel JavaScript Compiler ;
+        The Babel Compiler essentially takes JSX and transforms it into plain JavaScript for a web browser-->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.20.6/babel.min.js"></script>
+        <style>
+            #root{
+                background-color: bisque;
+            }
+
+            #root h1{
+                font-size: 90px;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel" charset="utf-8">
+            //Function-based component that returns "Hello"
+                function Hello(props){
+                        //we are returning a piece of data from this class, and from all the pieces of data (props) at our disposal, return this one (name)
+                        return <b>Hello, {props.name}{props.children}!</b>
+                }
+                //When we call render from the ReactDOM library, our first argument is the JSX component we want to be shown on the screen, and the second argument is the HTML element where we want this JSX to go
+                ReactDOM.render(<div><Hello name="Dan"><p>Wright</p></Hello></div>, document.getElementById("root"));
+        </script>
+    </body>
+</html>
